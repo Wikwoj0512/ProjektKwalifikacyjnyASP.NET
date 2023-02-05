@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Welcome</h1>
+    <form method="post">
+        <input type="text" asp-for="url" placeholder="Website URL"/>
+        <button type="submit">Analyse</button>
+    </form>
+
+</div>

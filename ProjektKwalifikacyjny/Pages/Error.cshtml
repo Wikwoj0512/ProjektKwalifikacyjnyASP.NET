@@ -1,0 +1,12 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div>
+    <h1 class="text-danger">Error.</h1>
+    <h2 class="text-danger">An error occurred while processing your request.</h2>
+    <h4 class="text-danger">Error description: @Model.exception</h4>
+</div>
+<button class="btn-primary" onclick="location.href='/Index'"><span>&#8592;</span>Back to Homepage</button>

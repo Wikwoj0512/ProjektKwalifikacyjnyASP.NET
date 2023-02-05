@@ -1,0 +1,43 @@
+﻿@page
+@model ProjektKwalifikacyjny.Pages.Result
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<div class="text-center">
+    @if (Model.website != null)
+    {
+        <h1>Analysis results: </h1>
+        <h2>Website URL: @Model.url</h2>
+        <table style="margin:0 auto;">
+            <tr>
+                <th>
+                    <h3 style="padding: 0px 10px">Keyword: </h3>
+                </th>
+                <th>
+                    <h3 style="padding: 0px 10px">Number of occurrences: </h3>
+                </th>
+
+            </tr>
+            @if (Model.website.headerKeywords.Keys.Count > 0)
+            {
+                @foreach (var item in Model.website.headerKeywords)
+                {
+                    <tr>
+                        <td>@item.Key</td>
+                        <td>@item.Value</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2"><h5>No keywords found</h5></td>
+                </tr>
+            }
+
+        </table>
+    }
+</div>
+<button class="btn-primary" onclick="location.href='/Index'"><span>&#8592;</span>Back to Homepage</button>
